@@ -471,7 +471,7 @@ export default function App() {
           </div>
           <h1 className="fu d2">
             УМНАЯ<br/>
-            <span className="hero-grad">ЗАЩИТА</span><br/>
+            <span className="hero-grad">МАРШРУТИЗАЦИЯ</span><br/>
             СЕТЕЙ
           </h1>
           <p className="fu d3">
