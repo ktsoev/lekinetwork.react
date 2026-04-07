@@ -477,7 +477,7 @@ export default function App() {
             <h3>Свяжитесь с нами</h3>
             <p>Расскажите о задачах вашей инфраструктуры — подберём оптимальное решение.</p>
             {[
-              { icon: '✉', text: 'info@leki.ru' },
+              { icon: '✉', text: 'info@lekinetwork.ru' },
               { icon: '☎', text: '+7 (495) 000-00-00' },
               { icon: '⌖', text: 'г. Москва' },
             ].map(({ icon, text }) => (
