@@ -224,6 +224,72 @@ const css = `
   }
   .svc p { font-size: 13.5px; line-height: 1.75; color: #5a5a5a; font-weight: 300; }
 
+  /* ── Pricing ── */
+  #pricing { border-top: 1px solid var(--border); }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .plan {
+    background: #000; padding: 52px 44px;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: background .3s;
+  }
+  .plan--featured {
+    background: rgba(0,229,255,0.04);
+  }
+  .plan--featured::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .plan-badge {
+    align-self: flex-start;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: #000; background: var(--accent);
+    padding: 4px 14px; margin-bottom: 30px;
+  }
+  .plan-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px; letter-spacing: 2px;
+    color: #fff; margin-bottom: 8px;
+  }
+  .plan-desc {
+    font-size: 12px; color: #444; line-height: 1.65;
+    letter-spacing: 0.3px; margin-bottom: 30px;
+  }
+  .plan-price {
+    display: flex; align-items: baseline; gap: 4px;
+    margin-bottom: 36px;
+  }
+  .plan-price-n {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 62px; color: var(--accent); line-height: 1;
+  }
+  .plan-price-aside {
+    display: flex; flex-direction: column; gap: 3px; padding-bottom: 4px;
+  }
+  .plan-price-cur { font-size: 18px; color: var(--accent); font-weight: 300; }
+  .plan-price-per {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #3a3a3a;
+  }
+  .plan-features {
+    list-style: none; margin-bottom: 44px; flex: 1;
+  }
+  .plan-features li {
+    font-size: 13px; color: #5a5a5a; font-weight: 300;
+    padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.04);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .plan-features li::before {
+    content: ''; width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent); opacity: .55; flex-shrink: 0;
+  }
+  .plan--featured .plan-features li { color: #777; }
+  .plan .btn { align-self: flex-start; }
+
   /* ── About ── */
   #about { background: rgba(0,229,255,.012); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
@@ -294,7 +360,7 @@ const css = `
     nav ul { display: none; }
     .hero { padding: 110px 24px 64px; }
     section { padding: 80px 24px; }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid, .pricing-grid { grid-template-columns: 1fr; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
     .hero-ticks, .corner { display: none; }
@@ -365,6 +431,7 @@ export default function App() {
         </a>
         <ul>
           <li><a href="#services">Услуги</a></li>
+          <li><a href="#pricing">Тарифы</a></li>
           <li><a href="#about">О нас</a></li>
           <li><a href="#contact">Контакты</a></li>
         </ul>
@@ -432,6 +499,71 @@ export default function App() {
               <Icon/>
               <h3>{title}</h3>
               <p>{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Pricing ── */}
+      <section id="pricing">
+        <div className="sec-label">Защищённый доступ</div>
+        <h2 className="sec-title">ТАРИФЫ</h2>
+        <div className="pricing-grid">
+          {[
+            {
+              name: 'Персональный',
+              desc: 'Защищённый канал передачи данных для личного использования',
+              price: '190',
+              features: [
+                '1 подключение',
+                'Зашифрованный туннель передачи данных',
+                'Защита трафика в публичных сетях',
+                'Автоматическое установление соединения',
+                'Поддержка по email',
+              ],
+            },
+            {
+              name: 'Стандарт',
+              desc: 'Выделенный сетевой контур для команды с приоритизацией трафика',
+              price: '490',
+              featured: true,
+              badge: 'Популярный',
+              features: [
+                '5 подключений',
+                'Изолированный приоритизированный канал',
+                'Защита от утечек DNS',
+                'Мониторинг состояния канала',
+                'Поддержка 24/7',
+              ],
+            },
+            {
+              name: 'Корпоративный',
+              desc: 'Персональный сетевой узел выделенной приватной сети для организации',
+              price: '990',
+              features: [
+                '15 подключений',
+                'Выделенный узел инфраструктуры',
+                'Статический IP-адрес',
+                'Полоса пропускания до 1 Гбит/с',
+                'Приоритетная поддержка 24/7',
+              ],
+            },
+          ].map(({ name, desc, price, features, featured, badge }) => (
+            <div key={name} className={`plan${featured ? ' plan--featured' : ''}`}>
+              {badge && <span className="plan-badge">{badge}</span>}
+              <div className="plan-name">{name}</div>
+              <div className="plan-desc">{desc}</div>
+              <div className="plan-price">
+                <span className="plan-price-n">{price}</span>
+                <div className="plan-price-aside">
+                  <span className="plan-price-cur">₽</span>
+                  <span className="plan-price-per">/ месяц</span>
+                </div>
+              </div>
+              <ul className="plan-features">
+                {features.map(f => <li key={f}>{f}</li>)}
+              </ul>
+              <a href="#contact" className="btn">Подключить <ArrowRight/></a>
             </div>
           ))}
         </div>
