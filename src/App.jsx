@@ -83,7 +83,7 @@ const css = `
   }
   .nav-logo-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 27px; letter-spacing: 5px; color: var(--accent);
+    font-size: 23px; letter-spacing: 4px; color: var(--accent);
     text-shadow: var(--glow);
   }
   nav ul { list-style: none; display: flex; gap: 44px; }
@@ -347,7 +347,7 @@ const css = `
   .footer-logo img { width: 30px; height: 30px; object-fit: contain; border-radius: 4px; }
   .footer-logo-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px; letter-spacing: 5px; color: var(--accent);
+    font-size: 20px; letter-spacing: 4px; color: var(--accent);
   }
   .footer-legal {
     font-size: 11px; color: #383838; letter-spacing: 1px; text-align: center; line-height: 1.9;
@@ -356,13 +356,30 @@ const css = `
 
   /* ── Responsive ── */
   @media (max-width: 820px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 16px 20px; }
     nav ul { display: none; }
-    .hero { padding: 110px 24px 64px; }
-    section { padding: 80px 24px; }
+    .nav-logo-name { font-size: 20px; letter-spacing: 3px; }
+
+    .hero { padding: 100px 20px 60px; }
+    .hero h1 { font-size: clamp(32px, 10vw, 62px); letter-spacing: 1px; }
+    .hero p { font-size: 14px; margin-bottom: 40px; }
+
+    section { padding: 64px 20px; }
+    .sec-title { margin-bottom: 40px; }
+
     .services-grid, .pricing-grid { grid-template-columns: 1fr; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-    footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+    .svc { padding: 36px 28px; }
+    .plan { padding: 36px 28px; }
+    .plan-price-n { font-size: 52px; }
+
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stats { gap: 24px; }
+    .stat-n { font-size: 42px; }
+
+    footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .footer-logo-name { font-size: 18px; letter-spacing: 3px; }
+    .footer-legal { text-align: left; }
+
     .hero-ticks, .corner { display: none; }
   }
 `;
@@ -426,8 +443,8 @@ export default function App() {
       {/* ── Nav ── */}
       <nav>
         <a href="#" className="nav-logo">
-          <img src="/logo.jpeg" alt="Leki logo"/>
-          <span className="nav-logo-name">LEKI</span>
+          <img src="/logo.jpeg" alt="Leki Networks logo"/>
+          <span className="nav-logo-name">LEKI NETWORKS</span>
         </a>
         <ul>
           <li><a href="#services">Услуги</a></li>
@@ -577,7 +594,7 @@ export default function App() {
             <h2 className="sec-title">О НАС</h2>
             <div className="about-body">
               <p>
-                LEKI — российская компания, специализирующаяся на построении и сопровождении корпоративной сетевой инфраструктуры. Мы работаем с организациями разного масштаба: от малого бизнеса до распределённых холдингов.
+                LEKI Networks — российская компания, специализирующаяся на построении и сопровождении корпоративной сетевой инфраструктуры. Мы работаем с организациями разного масштаба: от малого бизнеса до распределённых холдингов.
               </p>
               <p>
                 Наши инженеры обеспечивают стабильную и безопасную передачу данных по каналам любой сложности. Проводим полный цикл работ: проектирование, монтаж, настройку и техническое обслуживание.
@@ -634,13 +651,13 @@ export default function App() {
       {/* ── Footer ── */}
       <footer>
         <div className="footer-logo">
-          <img src="/logo.jpeg" alt="Leki"/>
-          <span className="footer-logo-name">LEKI</span>
+          <img src="/logo.jpeg" alt="Leki Networks"/>
+          <span className="footer-logo-name">LEKI NETWORKS</span>
         </div>
         <div className="footer-legal">
           ОГРНИП: 326774600256631&nbsp;&nbsp;|&nbsp;&nbsp;ИНН: 772010342868
         </div>
-        <div className="footer-copy">© 2025 LEKI</div>
+        <div className="footer-copy">© 2025 LEKI NETWORKS</div>
       </footer>
     </>
   );
