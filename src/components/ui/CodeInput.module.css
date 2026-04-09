@@ -13,25 +13,25 @@
 .box {
   width: 48px;
   height: 56px;
-  background: var(--bg-tertiary);
+  background: transparent;
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   font-size: var(--text-2xl);
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
   text-align: center;
   caret-color: var(--accent-primary);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast);
   outline: none;
 }
 
 .box:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px var(--accent-primary-muted);
 }
 
 .box.filled {
-  border-color: var(--border-hover);
+  border-color: rgba(0, 229, 255, 0.3);
+  color: var(--accent-primary);
 }
 
 .boxes.shake {

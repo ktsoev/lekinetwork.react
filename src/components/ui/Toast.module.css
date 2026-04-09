@@ -23,7 +23,7 @@
   align-items: flex-start;
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid;
   min-width: 280px;
   max-width: 380px;

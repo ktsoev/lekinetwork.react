@@ -49,6 +49,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
+h1, h2 {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 p {
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);

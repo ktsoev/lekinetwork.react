@@ -21,15 +21,24 @@
 
 .card {
   width: 100%;
-  max-width: 420px;
-  background: var(--bg-card);
+  max-width: 440px;
+  background: var(--bg-secondary);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-lg);
-  animation: fadeSlideUp 0.35s ease;
+  border-radius: 0;
+  padding: var(--space-xl) var(--space-2xl);
   position: relative;
   z-index: 1;
+  animation: fadeSlideUp 0.35s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
 }
 
 .logo {
@@ -42,15 +51,17 @@
 }
 
 .logoImg {
-  height: 36px;
+  height: 34px;
   width: auto;
+  border-radius: 3px;
 }
 
 .logoText {
-  font-size: var(--text-2xl);
-  font-weight: var(--weight-bold);
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
 }
 
 .logoAccent {

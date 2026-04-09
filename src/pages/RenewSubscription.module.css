@@ -27,8 +27,12 @@
 }
 
 .heading {
-  font-size: var(--text-3xl);
-  font-weight: var(--weight-bold);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1;
   margin-bottom: var(--space-xs);
 }
 
@@ -44,11 +48,11 @@
 }
 
 .sectionTitle {
-  font-size: var(--text-sm);
+  font-size: 10px;
   font-weight: var(--weight-semibold);
-  color: var(--text-secondary);
+  color: var(--accent-primary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 3px;
   margin-bottom: var(--space-md);
 }
 

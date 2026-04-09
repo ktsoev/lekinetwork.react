@@ -5,11 +5,17 @@
   margin-bottom: var(--space-xl);
   flex-wrap: wrap;
   gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-primary);
 }
 
 .title {
-  font-size: var(--text-3xl);
-  font-weight: var(--weight-bold);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1;
 }
 
 .grid {
@@ -36,26 +42,30 @@
   text-align: center;
   padding: var(--space-4xl) var(--space-xl);
   gap: var(--space-lg);
+  border: 1px solid var(--border-primary);
 }
 
 .emptyIcon {
-  width: 80px;
-  height: 80px;
-  color: var(--text-tertiary);
-  opacity: 0.5;
+  width: 64px;
+  height: 64px;
+  color: var(--accent-primary);
+  opacity: 0.2;
 }
 
 .emptyTitle {
-  font-size: var(--text-xl);
-  font-weight: var(--weight-semibold);
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: var(--text-primary);
 }
 
 .emptyDesc {
   font-size: var(--text-base);
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   max-width: 340px;
   margin: 0;
+  font-weight: 300;
 }
 
 .skeletonGrid {

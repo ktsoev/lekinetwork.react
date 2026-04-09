@@ -1,28 +1,47 @@
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   padding: var(--space-lg);
-  transition: border-color var(--transition-base), background var(--transition-base),
-    box-shadow var(--transition-base);
+  transition: border-color var(--transition-base), background var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
 .interactive {
   cursor: pointer;
 }
 
+.interactive:hover::after {
+  transform: scaleX(1);
+}
+
 .interactive:hover {
   border-color: var(--border-hover);
-  background: var(--bg-card-hover);
+  background: rgba(0, 229, 255, 0.022);
 }
 
 .selected {
   border-color: var(--border-accent) !important;
-  box-shadow: 0 0 0 1px var(--border-accent), var(--shadow-glow);
-  animation: glowPulse 2.5s ease infinite;
+  background: rgba(0, 229, 255, 0.04);
+}
+
+.selected::after {
+  transform: scaleX(1);
 }
 
 .elevated {
   background: var(--bg-elevated);
-  box-shadow: var(--shadow-md);
 }

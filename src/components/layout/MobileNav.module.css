@@ -4,11 +4,15 @@
   left: 0;
   right: 0;
   height: 60px;
-  background: rgba(18, 18, 26, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(22px);
   border-top: 1px solid var(--border-primary);
   display: none;
   z-index: 100;
+}
+
+[data-theme="light"] .nav {
+  background: rgba(245, 245, 250, 0.95);
 }
 
 @media (max-width: 1023px) {
@@ -24,8 +28,10 @@
   gap: 3px;
   text-decoration: none;
   color: var(--text-tertiary);
-  font-size: 10px;
-  font-weight: var(--weight-medium);
+  font-size: 9px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   transition: color var(--transition-fast);
   padding: var(--space-xs) 0;
 }
@@ -37,6 +43,6 @@
 }
 
 .icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }

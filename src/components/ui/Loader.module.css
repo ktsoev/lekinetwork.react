@@ -13,12 +13,12 @@
 
 .skeletonLine {
   height: 16px;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   composes: skeleton from '../../styles/animations.css';
 }
 
 .skeletonCard {
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   border: 1px solid var(--border-primary);
   padding: var(--space-lg);
   display: flex;

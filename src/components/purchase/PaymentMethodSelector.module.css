@@ -15,8 +15,9 @@
 .iconWrap {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,10 +46,10 @@
 }
 
 .radio {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid var(--border-hover);
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  border: 1px solid var(--border-hover);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,9 +62,9 @@
 }
 
 .radioDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
   background: var(--accent-primary);
   transform: scale(0);
   transition: transform var(--transition-fast);
