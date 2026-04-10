@@ -50,8 +50,8 @@
 	"landing": {
 		"hero": {
 			"badge": "Powered by VLESS Protocol",
-			"title": "Fast, Private,",
-			"titleAccent": "Secure VPN",
+			"title": "Fast Private",
+			"titleAccent": "Secure",
 			"subtitle": "Enterprise-grade VLESS protocol. Up to 3 devices. Instant setup. No logs, no throttling — just pure speed and privacy.",
 			"seePricing": "See Pricing"
 		},

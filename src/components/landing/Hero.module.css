@@ -95,7 +95,7 @@
 }
 
 .accent {
-  display: block;
+  /*display: block;*/
   background: linear-gradient(120deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
