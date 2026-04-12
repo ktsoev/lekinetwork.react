@@ -80,7 +80,7 @@
 			"q2": "How many devices can I connect?",
 			"a2": "Each subscription allows up to 3 devices simultaneously. You can configure any combination of phones, laptops, tablets, or other devices.",
 			"q3": "What payment methods are accepted?",
-			"a3": "We accept card and bank transfers via YooKassa, cryptocurrency via 0xProcessing, and Telegram-based crypto payments via CryptoBot.",
+			"a3": "We accept card and bank transfers via YooKassa.",
 			"q4": "How do I connect after purchasing?",
 			"a4": "After purchase, you receive a unique subscription link. Open the subscription link from your dashboard, import the link into any compatible app specified in the subscription panel, and you are ready to go.",
 			"q5": "Can I extend my subscription?",
@@ -159,14 +159,6 @@
 			"yookassa": {
 				"name": "YooKassa",
 				"description": "Credit card or bank transfer"
-			},
-			"0xprocessing": {
-				"name": "0xProcessing",
-				"description": "Cryptocurrency payment"
-			},
-			"cryptobot": {
-				"name": "CryptoBot",
-				"description": "Pay via Telegram CryptoBot"
 			}
 		}
 	},
