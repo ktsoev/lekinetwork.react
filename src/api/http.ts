@@ -39,7 +39,7 @@ const authorizationBearer = (token: string): string => {
 const withAuth = (auth: boolean) => {
 	if (!auth) return $api
 
-	const token = sessionStorage.getItem(AUTH_TOKEN_KEY)?.trim()
+	const token = localStorage.getItem(AUTH_TOKEN_KEY)?.trim()
 	if (!token) return $api
 
 	return $api.auth(authorizationBearer(token))
