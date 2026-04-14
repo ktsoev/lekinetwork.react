@@ -31,7 +31,7 @@ function pendingReducer(
 
 function hasStoredToken(): boolean {
 	return (
-		typeof window !== 'undefined' && !!sessionStorage.getItem(AUTH_TOKEN_KEY)
+		typeof window !== 'undefined' && !!localStorage.getItem(AUTH_TOKEN_KEY)
 	)
 }
 

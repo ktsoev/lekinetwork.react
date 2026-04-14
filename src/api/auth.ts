@@ -23,13 +23,13 @@ export const AuthService = {
 			{ email, code: code.trim() },
 			false,
 		)
-		sessionStorage.setItem(AUTH_TOKEN_KEY, res.access_token)
+		localStorage.setItem(AUTH_TOKEN_KEY, res.access_token)
 		const user = await AuthService.getMe()
 		return { user, token: res.access_token }
 	},
 
 	async logout(): Promise<void> {
-		sessionStorage.removeItem(AUTH_TOKEN_KEY)
+		localStorage.removeItem(AUTH_TOKEN_KEY)
 	},
 
 	async getMe(): Promise<User> {
