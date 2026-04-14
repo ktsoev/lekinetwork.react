@@ -19,7 +19,7 @@ export function AuthLayout() {
       <div className={styles.card}>
         <Link to="/" className={styles.logo}>
           <img src={logoSrc} alt="LEKI Networks" className={styles.logoImg} />
-          <span className={styles.logoText}>LEKI NETWORKS</span>
+          <span className={styles.logoText}>LEKI</span>
         </Link>
         <AnimatePresence mode="wait" initial={false}>
           <PageTransition routeKey={location.pathname}>
