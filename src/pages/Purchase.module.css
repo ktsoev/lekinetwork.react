@@ -50,7 +50,7 @@
 
 .stepNum.active {
   border-color: var(--accent-primary);
-  background: rgba(118, 196, 66, 0.08);
+  background: rgba(125, 255, 79, 0.08);
   color: var(--accent-primary);
 }
 

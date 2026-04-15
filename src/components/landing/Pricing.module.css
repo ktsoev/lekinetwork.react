@@ -55,7 +55,12 @@
 }
 
 .card.popular {
-  background: rgba(118, 196, 66, 0.04);
+  background: rgba(125, 255, 79, 0.05);
+  box-shadow:
+    0 0 40px rgba(125, 255, 79, 0.12),
+    0 0 80px rgba(125, 255, 79, 0.06),
+    inset 0 0 30px rgba(125, 255, 79, 0.03);
+  z-index: 1;
 }
 
 .card.popular::before {
@@ -66,6 +71,7 @@
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  box-shadow: 0 0 12px rgba(125, 255, 79, 0.8);
 }
 
 .popularBadge {
@@ -128,7 +134,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--accent-primary);
-  border: 1px solid rgba(118, 196, 66, 0.25);
+  border: 1px solid rgba(125, 255, 79, 0.25);
   padding: 3px 10px;
   margin-bottom: 12px;
 }

@@ -21,7 +21,10 @@ export function Header({ variant = 'public' }: HeaderProps) {
       <div className={styles.inner}>
         <Link to={isAuthenticated ? '/dashboard' : '/'} className={styles.logo}>
           <img src={logoSrc} alt="LEKI Networks" className={styles.logoImg} />
-          <span className={styles.logoText}>LEKI</span>
+          <div className={styles.logoTextWrap}>
+            <span className={styles.logoTextMain}>LEKI</span>
+            <span className={styles.logoTextSub}>NETWORKS</span>
+          </div>
         </Link>
 
         <nav className={styles.nav}>

@@ -39,16 +39,29 @@
   object-fit: contain;
 }
 
-.logoText {
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: 4px;
-  color: var(--accent-primary);
-  text-shadow: 0 0 24px rgba(118, 196, 66, 0.25);
+.logoTextWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1;
 }
 
-.logoAccent {
+.logoTextMain {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 5px;
   color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(125, 255, 79, 0.3);
+  line-height: 1;
+}
+
+.logoTextSub {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .nav {

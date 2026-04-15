@@ -30,12 +30,12 @@
 
 .interactive:hover {
   border-color: var(--border-hover);
-  background: rgba(118, 196, 66, 0.022);
+  background: rgba(125, 255, 79, 0.022);
 }
 
 .selected {
   border-color: var(--border-accent) !important;
-  background: rgba(118, 196, 66, 0.04);
+  background: rgba(125, 255, 79, 0.04);
 }
 
 .selected::after {
