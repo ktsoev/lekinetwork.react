@@ -1,7 +1,7 @@
 .section {
   position: relative;
   z-index: 1;
-  padding: 64px 0;
+  padding: 140px 0 72px;
   border-bottom: 1px solid var(--border-primary);
   overflow: hidden;
 }
@@ -10,7 +10,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 100% at 50% 50%, rgba(125, 255, 79, 0.04) 0%, transparent 70%);
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(125, 255, 79, 0.055) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -44,8 +45,8 @@
 
 .links {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 16px;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
@@ -61,6 +62,7 @@
   letter-spacing: 1.5px;
   text-decoration: none;
   text-transform: lowercase;
+  white-space: nowrap;
   transition:
     color var(--transition-fast),
     border-color var(--transition-fast),
@@ -76,21 +78,23 @@
 }
 
 .igIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
-  color: inherit;
 }
 
 @media (max-width: 820px) {
+  .section {
+    padding: 120px 0 60px;
+  }
+
   .inner {
     padding: 0 20px;
     gap: 24px;
   }
 
   .links {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
   }
 }
