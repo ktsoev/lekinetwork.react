@@ -43,6 +43,10 @@
   margin: 0;
   text-align: justify;
   text-align-last: center;
+  text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .leki {
@@ -99,6 +103,10 @@
   .inner {
     padding: 0 20px;
     gap: 24px;
+  }
+
+  .text {
+    letter-spacing: 1px;
   }
 
   .links {

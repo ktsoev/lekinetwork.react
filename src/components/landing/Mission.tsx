@@ -24,7 +24,7 @@ const accounts = [
 ];
 
 export function Mission() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // Split on "LEKI" to apply accent styling to it
   const text = t('landing.mission.text');
@@ -34,7 +34,7 @@ export function Mission() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.accent} aria-hidden />
-        <p className={styles.text}>
+        <p className={styles.text} lang={i18n.language}>
           {parts[0]}<strong className={styles.leki}>LEKI</strong>{parts[1]}
         </p>
         <div className={styles.links}>
