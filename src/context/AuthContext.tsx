@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 	useEffect(() => {
 		if (!meQuery.isError) return
-		sessionStorage.removeItem(AUTH_TOKEN_KEY)
+		localStorage.removeItem(AUTH_TOKEN_KEY)
 		queryClient.removeQueries({ queryKey: queryKeys.me })
 	}, [meQuery.isError, queryClient])
 

@@ -212,7 +212,8 @@
 		"emailPlaceholder": "your@email.com",
 		"emailHint": "Receive payment confirmation at this address",
 		"cta": "Renew — Pay {{amount}}",
-		"ctaDisabled": "Select duration and payment method"
+		"ctaDisabled": "Select duration and payment method",
+		"invalidSubscription": "Payment unavailable: invalid subscription data"
 	},
 	"subscription": {
 		"details": {

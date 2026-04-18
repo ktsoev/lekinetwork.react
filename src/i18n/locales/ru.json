@@ -212,7 +212,8 @@
 		"emailPlaceholder": "ваш@email.com",
 		"emailHint": "Получить подтверждение оплаты на этот адрес",
 		"cta": "Продлить — Оплатить {{amount}}",
-		"ctaDisabled": "Выберите срок и способ оплаты"
+		"ctaDisabled": "Выберите срок и способ оплаты",
+		"invalidSubscription": "Оплата недоступна: некорректные данные подписки"
 	},
 	"subscription": {
 		"details": {

@@ -108,6 +108,12 @@
 
 /* ── Actions ─────────────────────────────────────────────────────────────────── */
 
+.payError {
+  font-size: var(--text-sm);
+  color: var(--status-expired);
+  margin-bottom: var(--space-sm);
+}
+
 .actions {
   display: flex;
   gap: var(--space-md);

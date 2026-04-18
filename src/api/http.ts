@@ -2,7 +2,11 @@ import wretch, { type WretchOptions } from 'wretch'
 import { retry, type RetryOptions } from 'wretch/middlewares'
 import { AUTH_TOKEN_KEY } from '../utils/constants'
 
-const DEFAULT_DEV_API = 'http://127.0.0.1:8080'
+const PRODUCTION_API = 'https://api.lekinetworks.ru/'
+
+if (!import.meta.env.VITE_API_URL) {
+	console.error('[http] VITE_API_URL is not set — falling back to production default. Set this env variable explicitly.')
+}
 
 const basicWretchOptions: WretchOptions = {
 	credentials: 'include',
@@ -25,7 +29,7 @@ const defaultRetryOptions: RetryOptions = {
 	resolveWithLatestResponse: false,
 }
 
-const $api = wretch(import.meta.env.VITE_API_URL || DEFAULT_DEV_API)
+const $api = wretch(import.meta.env.VITE_API_URL || PRODUCTION_API)
 	.options(basicWretchOptions)
 	.middlewares([retry(defaultRetryOptions)])
 	.accept('application/json')

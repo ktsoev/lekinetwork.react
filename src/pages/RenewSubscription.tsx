@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
@@ -84,10 +84,9 @@ export function RenewSubscription() {
 		},
 	})
 
-	if (subError) {
-		navigate('/dashboard/renew', { replace: true })
-		return null
-	}
+	useEffect(() => {
+		if (subError) navigate('/dashboard/renew', { replace: true })
+	}, [subError, navigate])
 
 	if (subLoading || tariffsLoading) {
 		return (
@@ -202,6 +201,9 @@ export function RenewSubscription() {
 			</section>
 
 			{/* Actions */}
+			{!isDeviceIdValid && (
+				<p className={styles.payError}>{t('renew.invalidSubscription')}</p>
+			)}
 			<div className={styles.actions}>
 				<Button
 					variant='secondary'
