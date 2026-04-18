@@ -41,6 +41,14 @@
   text-transform: uppercase;
   color: var(--text-primary);
   margin: 0;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.leki {
+  color: var(--accent-primary);
+  /* Bebas Neue has no bold variant — simulate thickness with text-stroke */
+  -webkit-text-stroke: 0.6px var(--accent-primary);
 }
 
 .links {

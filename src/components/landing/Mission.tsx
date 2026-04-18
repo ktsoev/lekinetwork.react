@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styles from './Mission.module.css';
 
 const InstagramIcon = () => (
@@ -23,13 +24,18 @@ const accounts = [
 ];
 
 export function Mission() {
+  const { t } = useTranslation();
+
+  // Split on "LEKI" to apply accent styling to it
+  const text = t('landing.mission.text');
+  const parts = text.split('LEKI');
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.accent} aria-hidden />
         <p className={styles.text}>
-          Все полученные средства за использование нашего интернет&#8209;сервиса&nbsp;LEKI
-          будут идти на развитие спорта среди молодёжи
+          {parts[0]}<strong className={styles.leki}>LEKI</strong>{parts[1]}
         </p>
         <div className={styles.links}>
           {accounts.map(({ handle, url }) => (

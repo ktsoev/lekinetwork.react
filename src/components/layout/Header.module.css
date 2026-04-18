@@ -51,6 +51,7 @@
   font-size: 26px;
   letter-spacing: 5px;
   color: var(--accent-primary);
+  -webkit-text-stroke: 0.6px var(--accent-primary);
   text-shadow: 0 0 20px rgba(125, 255, 79, 0.3);
   line-height: 1;
 }

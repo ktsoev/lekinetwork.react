@@ -7,7 +7,9 @@ import { TariffsService } from '../../api/tariffs'
 import { useAuth } from '../../context/AuthContext'
 import { useCurrencyFormatter } from '../../hooks/useCurrencyFormatter'
 import { mockTariffs } from '../../mocks/tariffs'
+import { MAX_DEVICES } from '../../utils/constants'
 import { Container } from '../layout/Container'
+import { Card } from '../ui/Card'
 import { Button } from '../ui/Button'
 import styles from './Pricing.module.css'
 
@@ -43,7 +45,7 @@ export function Pricing() {
   return (
     <section id='pricing' className={styles.section}>
       <Container>
-        <div className={styles.secLabel}>{t('landing.pricing.label', 'Тарифы')}</div>
+        <div className={styles.secLabel}>{t('landing.pricing.label')}</div>
         <h2 className={styles.heading}>{t('landing.pricing.heading')}</h2>
         <motion.div
           className={styles.grid}
@@ -53,37 +55,63 @@ export function Pricing() {
           viewport={{ once: true, margin: '-80px' }}
         >
           {tariffs.map(tariff => (
-            <motion.div
-              key={tariff.id}
-              variants={itemVariants}
-              className={[styles.card, tariff.popular ? styles.popular : ''].filter(Boolean).join(' ')}
-            >
-              {tariff.popular && (
-                <span className={styles.popularBadge}>
-                  {t('purchase.tariff.popular')}
-                </span>
-              )}
-              <span className={styles.name}>{tariff.name}</span>
-              <div className={styles.priceRow}>
-                <span className={styles.priceNum}>{formatPrice(tariff).replace(/[^\d]/g, '')}</span>
-                <div className={styles.priceAside}>
-                  <span className={styles.priceCur}>₽</span>
-                  <span className={styles.pricePer}>/ мес</span>
-                </div>
-              </div>
-              {tariff.discount && (
-                <span className={styles.discount}>
-                  {t('purchase.tariff.save', { pct: tariff.discount })}
-                </span>
-              )}
-              <Button
-                size='sm'
-                variant={tariff.popular ? 'primary' : 'secondary'}
-                className={styles.cta}
-                onClick={() => navigate(target)}
+            <motion.div key={tariff.id} variants={itemVariants}>
+              <Card
+                className={[styles.card, tariff.popular ? styles.popular : ''].filter(Boolean).join(' ')}
               >
-                {t('common.actions.choosePlan')}
-              </Button>
+                {tariff.popular && (
+                  <span className={styles.popularBadge}>
+                    {t('purchase.tariff.popular')}
+                  </span>
+                )}
+                <div className={styles.nameRow}>
+                  <span className={styles.name}>{tariff.name}</span>
+                  <span className={styles.deviceBadge}>
+                    {t('purchase.tariff.devices', { count: MAX_DEVICES })}
+                  </span>
+                </div>
+                <div>
+                  <span className={styles.price}>{formatPrice(tariff)}</span>
+                  <span className={styles.priceSuffix}>
+                    {t('purchase.tariff.perDays', { days: tariff.durationDays })}
+                  </span>
+                </div>
+                <div className={styles.discountRow}>
+                  {tariff.discount ? (
+                    <span className={styles.discount}>
+                      {t('purchase.tariff.save', { pct: tariff.discount })}
+                    </span>
+                  ) : null}
+                </div>
+                <div className={styles.features}>
+                  {tariff.features.filter(f => !/devices?/i.test(f)).map(f => (
+                    <span key={f} className={styles.feature}>
+                      <svg
+                        className={styles.featureCheck}
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          d='M5 13l4 4L19 7'
+                        />
+                      </svg>
+                      {f}
+                    </span>
+                  ))}
+                </div>
+                <Button
+                  size='sm'
+                  variant={tariff.popular ? 'primary' : 'secondary'}
+                  className={styles.cta}
+                  onClick={() => navigate(target)}
+                >
+                  {t('common.actions.choosePlan')}
+                </Button>
+              </Card>
             </motion.div>
           ))}
         </motion.div>

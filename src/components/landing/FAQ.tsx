@@ -13,7 +13,7 @@ export function FAQ() {
   return (
     <section className={styles.section}>
       <Container>
-        <div className={styles.secLabel}>{t('landing.faq.label', 'FAQ')}</div>
+        <div className={styles.secLabel}>{t('landing.faq.label')}</div>
         <h2 className={styles.heading}>{t('landing.faq.heading')}</h2>
         <div className={styles.list}>
           {faqKeys.map((key, i) => (

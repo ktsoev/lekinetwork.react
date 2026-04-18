@@ -36,7 +36,7 @@ export function Features() {
   return (
     <section className={styles.section}>
       <Container>
-        <div className={styles.secLabel}>{t('landing.features.label', 'Возможности')}</div>
+        <div className={styles.secLabel}>{t('landing.features.label')}</div>
         <h2 className={styles.heading}>{t('landing.features.heading')}</h2>
         <motion.div
           className={styles.grid}

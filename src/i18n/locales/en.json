@@ -56,6 +56,7 @@
 			"seePricing": "See Pricing"
 		},
 		"features": {
+			"label": "Features",
 			"heading": "Why LEKI NETWORKS?",
 			"vless": {
 				"title": "VLESS Protocol",
@@ -71,9 +72,14 @@
 			}
 		},
 		"pricing": {
+			"label": "Pricing",
 			"heading": "Simple Pricing"
 		},
+		"mission": {
+			"text": "All funds received from using our internet service LEKI will go towards the development of youth sports"
+		},
 		"faq": {
+			"label": "FAQ",
 			"heading": "Frequently Asked Questions",
 			"q1": "What is VLESS?",
 			"a1": "VLESS is a lightweight, high-performance proxy protocol that is more efficient than traditional VPN protocols. It is designed to be fast, secure, and resistant to detection.",
